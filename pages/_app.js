@@ -1,14 +1,13 @@
+import { SessionProvider } from 'next-auth/react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect } from 'react';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    // Import Bootstrap JS on client side
-    import('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
-
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  return (
+    <SessionProvider session={session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  );
 }
 
 export default MyApp;
