@@ -20,6 +20,7 @@
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.1",
     "bootstrap": "^5.3.0",
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "next-auth": "^4.22.1"
   }
 }
